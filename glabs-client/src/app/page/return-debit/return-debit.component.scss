@@ -1,0 +1,30 @@
+
+$color-grey-50: #efefef;
+$color-red: #a52b2b;
+.return_debit {
+    &__heading {
+        background: $color-red;
+        color: white;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 auto;
+        justify-content: center;
+    }
+   
+    &__wrapper {
+        text-align: left;
+        border: 1px solid gray;
+        box-shadow: 0 0 3px 0;
+        margin: 5px;
+        &__payment {
+            padding: 5px;
+        }
+        &__payer {
+            padding: 5px;
+            background: $color-grey-50;
+        }
+    }
+}

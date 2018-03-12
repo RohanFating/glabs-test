@@ -1,0 +1,33 @@
+<div class="return_debit">
+  <h2 class="return_debit__heading">
+    Return Debit Items
+  </h2>
+  <div class="return_debit__container"  *ngIf="returnDebitItems.length>0">
+      <div *ngFor="let item of returnDebitItems" class="return_debit__wrapper">
+          <div class="return_debit__wrapper__payment">
+            <h3>Payment Info</h3>
+            <ul>
+                <li><b>Ref: </b>{{item.paymentInfo.ref}}</li>
+                <li><b>Description: </b>{{item.paymentInfo.returnDescription}}</li>
+                <li><b>Processing Date: </b>{{item.paymentInfo.originalProcessingDate}}</li>
+                <li><b>Amount: </b>{{item.paymentInfo.valueOf}}</li>
+                <li><b>Currency: </b>{{item.paymentInfo.currency}}</li>
+            </ul>
+          </div>
+          <div class="return_debit__wrapper__payer">
+              <h3>Payer Info</h3>
+              <ul>
+                  <li><b>Name: </b>{{item.paymentAccount.name}}</li>
+                  <li><b>Ref: </b>{{item.paymentAccount.ref}}</li>
+                  <li><b>Number: </b>{{item.paymentAccount.number}}</li>
+                  <li><b>Bank: </b>{{item.paymentAccount.bankName}}</li>
+                  <li><b>Branch: </b>{{item.paymentAccount.branchName}}</li>
+              </ul>
+           
+          </div>
+        </div>
+  </div>
+  <div *ngIf="returnDebitItems.length===0">
+    <b>Service Error</b>
+  </div>
+</div>
