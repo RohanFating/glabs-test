@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReturnDebitComponent } from './return-debit.component';
+import { PageModule } from '../page.module';
+import { HttpHandler, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 describe('ReturnDebitComponent', () => {
   let component: ReturnDebitComponent;
@@ -8,7 +12,8 @@ describe('ReturnDebitComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReturnDebitComponent ]
+      declarations: [ ReturnDebitComponent ],
+      providers: [ HttpHandler, HttpClient ]
     })
     .compileComponents();
   }));
@@ -20,6 +25,6 @@ describe('ReturnDebitComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeDefined();
   });
 });

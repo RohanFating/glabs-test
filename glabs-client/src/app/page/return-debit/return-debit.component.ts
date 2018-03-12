@@ -27,9 +27,8 @@ export class ReturnDebitComponent implements OnInit {
       this.returnDebitItems = response;
     },
       (err) => {
-        this.returnDebitItems = [];
-        console.log('Server Error');
+       this.returnDebitItems = [];
+       console.log('Server Error');
       });
   }
-
 }
